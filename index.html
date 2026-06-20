@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meuble Galaxy Plus — L'art du mobilier de luxe. Découvrez nos collections exclusives de chambres, armoires et solutions de rangement premium. Livraison et installation offertes à Bejaia, Algérie." />
+  <meta name="keywords" content="meuble luxe, chambre à coucher, armoire coulissante, mobilier algérie, meuble galaxy plus, Bejaia, collection gold" />
+  <meta name="author" content="Meuble Galaxy Plus" />
+  <meta property="og:title" content="Meuble Galaxy Plus — Mobilier de Luxe" />
+  <meta property="og:description" content="Collections exclusives de mobilier de luxe. Chambres, armoires, et rangements premium avec livraison et installation offertes." />
+  <meta property="og:type" content="website" />
+
+  <title>Meuble Galaxy Plus — L'Art du Mobilier de Luxe</title>
+
+  <!-- Google Fonts: Playfair Display + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION BAR — Glassmorphic Sticky Nav
+  ═══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Navigation principale">
+
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" aria-label="Meuble Galaxy Plus — Accueil">
+        <div class="logo-icon-wrap">
+          <img src="assets/images/logo_icon.png" alt="Meuble Galaxy Plus logo icon" class="logo-icon-img" />
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-brand">GALAXY PLUS</span>
+          <span class="logo-sub">MEUBLE DE LUXE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#hero" class="nav-link" data-label="Accueil">Accueil</a></li>
+        <li><a href="#collections" class="nav-link" data-label="Collections">Collections</a></li>
+        <li><a href="#products" class="nav-link" data-label="Produits">Produits</a></li>
+        <li><a href="#about" class="nav-link" data-label="À Propos">À Propos</a></li>
+        <li><a href="#contact" class="nav-link" data-label="Contact">Contact</a></li>
+      </ul>
+
+      <!-- CTA + Hamburger -->
+      <div class="nav-actions">
+        <a href="#cart" class="cart-btn" aria-label="Panier" style="position: relative; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; margin-right: 1.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span id="cart-badge" style="position: absolute; top: -8px; right: -12px; background: var(--color-gold); color: black; font-size: 0.75rem; font-weight: bold; width: 20px; height: 20px; display: none; align-items: center; justify-content: center; border-radius: 50%;">0</span>
+        </a>
+        <a href="#shop" class="btn-gold btn-sm nav-cta">
+          Boutique
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+      <ul class="mobile-links" role="list">
+        <li><a href="#hero" class="mobile-link" data-close-menu>Accueil</a></li>
+        <li><a href="#collections" class="mobile-link" data-close-menu>Collections</a></li>
+        <li><a href="#products" class="mobile-link" data-close-menu>Produits</a></li>
+        <li><a href="#about" class="mobile-link" data-close-menu>À Propos</a></li>
+        <li><a href="#contact" class="mobile-link" data-close-menu>Contact</a></li>
+      </ul>
+      <a href="#shop" class="btn-gold btn-full mt-4" data-close-menu>
+        Visiter la Boutique
+      </a>
+    </div>
+  </header>
+
+  <!-- SPA Dynamic View Container -->
+  <div id="app-view"></div>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION — Cinematic Split-Screen Slider
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Section principale">
+
+      <!-- Slider wrapper -->
+      <div class="hero-slider" id="heroSlider" role="region" aria-label="Carrousel de collections" aria-live="polite">
+
+        <!-- Slide 1: Gold Collection -->
+        <div class="hero-slide active" id="slide-1" role="group" aria-label="Slide 1: Collection Gold">
+          <div class="hero-bg" style="background-image: url('assets/images/gold_collection.jpg')" aria-hidden="true">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-particles" aria-hidden="true" id="heroParticles"></div>
+          </div>
+          <div class="hero-content">
+            <div class="hero-eyebrow reveal-up">
+              <span class="eyebrow-line" aria-hidden="true"></span>
+              <span class="eyebrow-text">Collection Exclusive 2025</span>
+              <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+            <h1 class="hero-title reveal-up delay-1">
+              L'Élégance<br />
+              <em class="gold-text">GOLD</em><br />
+              Redéfinie
+            </h1>
+            <p class="hero-subtitle reveal-up delay-2">
+              Chambre Capitouné haut de gamme — Tête de lit XXL en velours,<br class="break-desktop" />
+              portes coulissantes miroir, rangements intelligents.
+            </p>
+            <div class="hero-price reveal-up delay-3">
+              <span class="price-from">À partir de</span>
+              <span class="price-value">102<span class="price-currency">,000 DA</span></span>
+            </div>
+            <div class="hero-cta reveal-up delay-4">
+              <a href="#shop" class="btn-gold btn-magnetic" id="hero-cta-btn" role="button">
+                <span class="btn-text">Visiter la Boutique</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#collections" class="btn-ghost" id="hero-gallery-btn" role="button">
+                Voir le Catalogue
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Bedroom Collection -->
+        <div class="hero-slide" id="slide-2" role="group" aria-label="Slide 2: Chambre à coucher">
+          <div class="hero-bg" style="background-image: url('assets/images/hero_bedroom.jpg')" aria-hidden="true">
+            <div class="hero-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="hero-content">
+            <div class="hero-eyebrow reveal-up">
+              <span class="eyebrow-line" aria-hidden="true"></span>
+              <span class="eyebrow-text">Chambre à Coucher Premium</span>
+              <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+            <h1 class="hero-title reveal-up delay-1">
+              Votre Chambre,<br />
+              <em class="gold-text">Votre</em><br />
+              Sanctuaire
+            </h1>
+            <p class="hero-subtitle reveal-up delay-2">
+              Matériaux nobles, finitions impeccables et design sur-mesure<br class="break-desktop" />
+              pour une expérience de sommeil sans égale.
+            </p>
+            <div class="hero-price reveal-up delay-3" style="opacity: 0; pointer-events: none;" aria-hidden="true">
+              <span class="price-from">À partir de</span>
+              <span class="price-value">000<span class="price-currency">,000 DA</span></span>
+            </div>
+            <div class="hero-cta reveal-up delay-4">
+              <a href="#shop" class="btn-gold btn-magnetic" id="hero-bedroom-btn" role="button">
+                <span class="btn-text">Découvrir la Boutique</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Wardrobe -->
+        <div class="hero-slide" id="slide-3" role="group" aria-label="Slide 3: Armoires coulissantes">
+          <div class="hero-bg" style="background-image: url('assets/images/wardrobe_collection.jpg')" aria-hidden="true">
+            <div class="hero-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="hero-content">
+            <div class="hero-eyebrow reveal-up">
+              <span class="eyebrow-line" aria-hidden="true"></span>
+              <span class="eyebrow-text">Armoires Sur-Mesure</span>
+              <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+            <h1 class="hero-title reveal-up delay-1">
+              Rangement<br />
+              <em class="gold-text">Intelligent</em><br />
+              & Élégant
+            </h1>
+            <p class="hero-subtitle reveal-up delay-2">
+              Armoires coulissantes miroir, intérieur optimisé, finitions noir mat<br class="break-desktop" />
+              et poignées dorées — Le luxe à portée de main.
+            </p>
+            <div class="hero-price reveal-up delay-3" style="opacity: 0; pointer-events: none;" aria-hidden="true">
+              <span class="price-from">À partir de</span>
+              <span class="price-value">000<span class="price-currency">,000 DA</span></span>
+            </div>
+            <div class="hero-cta reveal-up delay-4">
+              <a href="#shop" class="btn-gold btn-magnetic" id="hero-wardrobe-btn" role="button">
+                <span class="btn-text">Voir les Armoires</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls" aria-label="Contrôles du carrousel">
+          <button class="slider-btn prev" id="sliderPrev" aria-label="Slide précédente">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="slider-dots" role="tablist" aria-label="Sélectionner une slide">
+            <button class="dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-index="0" id="dot-0"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Slide 2" data-index="1" id="dot-1"></button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Slide 3" data-index="2" id="dot-2"></button>
+          </div>
+          <button class="slider-btn next" id="sliderNext" aria-label="Slide suivante">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+          <div class="scroll-line"></div>
+          <span class="scroll-text">SCROLL</span>
+        </div>
+      </div>
+
+      <!-- Trust Badges Band -->
+      <div class="hero-trust-band" aria-label="Avantages">
+        <div class="trust-band-inner">
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span>
+            <span>Livraison Offerte</span>
+          </div>
+          <div class="trust-separator" aria-hidden="true">◆</div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
+            <span>Installation Gratuite</span>
+          </div>
+          <div class="trust-separator" aria-hidden="true">◆</div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+            <span>Garantie Qualité</span>
+          </div>
+          <div class="trust-separator" aria-hidden="true">◆</div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.1 10.5l-6.6-6.6a2 2 0 0 0-2.8 0l-8.6 8.6a2 2 0 0 0 0 2.8l6.6 6.6a2 2 0 0 0 2.8 0l8.6-8.6a2 2 0 0 0 0-2.8z"></path><path d="M6 14l2-2"></path><path d="M10 18l2-2"></path></svg></span>
+            <span>Sur-Mesure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         COLLECTIONS GRID — 3-Column Staggered Reveal
+    ═══════════════════════════════════════════ -->
+    <section class="collections-section" id="collections" aria-labelledby="collections-heading">
+      <div class="section-container">
+
+        <!-- Section Header -->
+        <header class="section-header" data-animate="fade-up">
+          <div class="section-eyebrow">
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+            <span>Nos Collections</span>
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title" id="collections-heading">
+            L'Excellence dans<br />
+            <span class="gold-text">Chaque Espace</span>
+          </h2>
+          <p class="section-desc">
+            Découvrez nos univers soigneusement conçus pour transformer votre intérieur en sanctuaire de luxe.
+          </p>
+        </header>
+
+        <!-- Collections Grid -->
+        <div class="collections-grid" role="list">
+
+          <!-- Card 1: Chambres -->
+          <article class="collection-card stagger-1" role="listitem" data-animate="fade-up">
+            <div class="card-image-wrap" onclick="window.location.hash='#shop/Chambres'" style="cursor:pointer;">
+              <img
+                src="assets/images/bedroom_collection.jpg"
+                alt="Collection Chambres à coucher de luxe — Meuble Galaxy Plus"
+                class="card-img"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="card-overlay" aria-hidden="true"></div>
+              <div class="card-badge">Best-Seller</div>
+            </div>
+            <div class="card-body">
+              <div class="card-category">Mobilier de Chambre</div>
+              <h3 class="card-title" onclick="window.location.hash='#shop/Chambres'" style="cursor:pointer; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--color-gold)'" onmouseout="this.style.color='white'">Chambres à Coucher</h3>
+              <p class="card-desc">
+                Lits capitouné, têtes de lit XXL en velours, commodes et chevets — une harmonie parfaite entre luxe et confort.
+              </p>
+              <div class="card-footer">
+                <span class="card-price">Dès 85,000 DA</span>
+                <a href="#shop/Chambres" class="card-cta" aria-label="Explorer les chambres">
+                  Explorer
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Armoires -->
+          <article class="collection-card stagger-2" role="listitem" data-animate="fade-up">
+            <div class="card-image-wrap" onclick="window.location.hash='#shop/Armoires'" style="cursor:pointer;">
+              <img
+                src="assets/images/wardrobe_collection.jpg"
+                alt="Armoires coulissantes miroir — Meuble Galaxy Plus"
+                class="card-img"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="card-overlay" aria-hidden="true"></div>
+              <div class="card-badge badge-gold">Nouveau</div>
+            </div>
+            <div class="card-body">
+              <div class="card-category">Armoires & Dressing</div>
+              <h3 class="card-title" onclick="window.location.hash='#shop/Armoires'" style="cursor:pointer; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--color-gold)'" onmouseout="this.style.color='white'">Armoires Coulissantes</h3>
+              <p class="card-desc">
+                Portes miroir ou laqué mat, intérieur 100% optimisé, dimensions personnalisées selon votre space.
+              </p>
+              <div class="card-footer">
+                <span class="card-price">Dès 65,000 DA</span>
+                <a href="#shop/Armoires" class="card-cta" aria-label="Explorer les armoires">
+                  Explorer
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Rangements Intelligents -->
+          <article class="collection-card stagger-3" role="listitem" data-animate="fade-up">
+            <div class="card-image-wrap" onclick="window.location.hash='#shop/Rangement'" style="cursor:pointer;">
+              <img
+                src="assets/images/storage_collection.jpg"
+                alt="Solutions de rangement intelligent — Meuble Galaxy Plus"
+                class="card-img"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="card-overlay" aria-hidden="true"></div>
+              <div class="card-badge badge-dark">Exclusif</div>
+            </div>
+            <div class="card-body">
+              <div class="card-category">Smart Storage</div>
+              <h3 class="card-title" onclick="window.location.hash='#shop/Rangement'" style="cursor:pointer; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--color-gold)'" onmouseout="this.style.color='white'">Rangements Intelligents</h3>
+              <p class="card-desc">
+                Commodes haute capacité, ottomans coffre, niches murales et systèmes de rangement modulaires sur-mesure.
+              </p>
+              <div class="card-footer">
+                <span class="card-price">Dès 42,000 DA</span>
+                <a href="#shop/Rangement" class="card-cta" aria-label="Explorer les rangements">
+                  Explorer
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FEATURED PRODUCT — Gold Collection Detail Card
+    ═══════════════════════════════════════════ -->
+    <section class="product-section" id="products" aria-labelledby="products-heading">
+      <div class="section-container">
+
+        <!-- Section Header -->
+        <header class="section-header" data-animate="fade-up">
+          <div class="section-eyebrow">
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+            <span>Collection Phare</span>
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title" id="products-heading">
+            Chambre <span class="gold-text">GOLD</span><br />
+            La Pièce Maîtresse
+          </h2>
+        </header>
+
+        <!-- Product Detail Layout -->
+        <div class="product-detail" data-animate="fade-up">
+
+          <!-- Product Image Gallery -->
+          <div class="product-gallery">
+            <div class="gallery-main">
+              <img
+                src="assets/images/gold_collection.jpg"
+                alt="Chambre Gold Collection — Lit capitouné velours or, armoire miroir — Meuble Galaxy Plus"
+                class="gallery-main-img"
+                loading="lazy"
+                decoding="async"
+                id="mainProductImage"
+              />
+              <div class="gallery-badge-group" aria-label="Labels du produit">
+                <span class="gallery-badge">⭐ Collection 2025</span>
+                <span class="gallery-badge badge-delivery">🚚 Livraison + Pose Offertes</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs" role="list" aria-label="Miniatures du produit">
+              <button class="thumb active" data-img="assets/images/gold_collection.jpg" aria-label="Image principale" role="listitem">
+                <img src="assets/images/gold_collection.jpg" alt="Vue principale Gold Collection" loading="lazy" />
+              </button>
+              <button class="thumb" data-img="assets/images/hero_bedroom.jpg" aria-label="Vue lit capitouné" role="listitem">
+                <img src="assets/images/hero_bedroom.jpg" alt="Lit capitouné velours" loading="lazy" />
+              </button>
+              <button class="thumb" data-img="assets/images/bedroom_collection.jpg" aria-label="Vue ensemble chambre" role="listitem">
+                <img src="assets/images/bedroom_collection.jpg" alt="Ensemble chambre complète" loading="lazy" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info">
+
+            <div class="product-meta">
+              <span class="product-category-tag">Chambre à Coucher — Gold Edition</span>
+              <div class="product-rating" aria-label="Note: 5 étoiles sur 5">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-count">(48 avis clients)</span>
+              </div>
+            </div>
+
+            <h3 class="product-name">Chambre Capitouné<br /><span class="gold-text">GOLD PRESTIGE XXL</span></h3>
+
+            <div class="product-price-wrap">
+              <div class="price-main">
+                <span class="price-label">Prix tout compris</span>
+                <span class="price-display">102<span class="price-curr">,000 <small>DA</small></span></span>
+              </div>
+              <div class="price-note">✓ Livraison + Installation + Garantie incluses</div>
+            </div>
+
+            <!-- Specs Grid -->
+            <div class="specs-grid" aria-label="Caractéristiques du produit">
+              <div class="spec-item">
+                <span class="spec-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.1 10.5l-6.6-6.6a2 2 0 0 0-2.8 0l-8.6 8.6a2 2 0 0 0 0 2.8l6.6 6.6a2 2 0 0 0 2.8 0l8.6-8.6a2 2 0 0 0 0-2.8z"></path></svg></span>
+                <div class="spec-content">
+                  <span class="spec-label">Dimensions Lit</span>
+                  <span class="spec-value">200 × 180 cm (King Size)</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                <div class="spec-content">
+                  <span class="spec-label">Revêtement</span>
+                  <span class="spec-value">Velours capitouné premium</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12H16c-.7 2-3 3-4.5 3S7.7 14 7 12H2.5"></path><path d="M5.5 5h13a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path></svg></span>
+                <div class="spec-content">
+                  <span class="spec-label">Armoire</span>
+                  <span class="spec-value">Portes coulissantes miroir 3 vantaux</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+                <div class="spec-content">
+                  <span class="spec-label">Finition</span>
+                  <span class="spec-value">Laqué mat + accents dorés</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span>
+                <div class="spec-content">
+                  <span class="spec-label">Inclus</span>
+                  <span class="spec-value">Lit + Armoire + 2 Chevets + Commode</span>
+                </div>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                <div class="spec-content">
+                  <span class="spec-label">Garantie</span>
+                  <span class="spec-value">2 ans matériaux & fabrication</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights -->
+            <div class="product-highlights" aria-label="Points forts">
+              <div class="highlight-pill">
+                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon></svg></span> Livraison Gratuite
+              </div>
+              <div class="highlight-pill">
+                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span> Pose Incluse
+              </div>
+              <div class="highlight-pill">
+                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.1 10.5l-6.6-6.6a2 2 0 0 0-2.8 0l-8.6 8.6a2 2 0 0 0 0 2.8l6.6 6.6a2 2 0 0 0 2.8 0l8.6-8.6a2 2 0 0 0 0-2.8z"></path></svg></span> Sur-Mesure
+              </div>
+            </div>
+
+            <!-- Color Variants -->
+            <div class="color-variants" aria-label="Couleurs disponibles">
+              <span class="variants-label">Couleurs disponibles :</span>
+              <div class="color-swatches">
+                <button class="swatch active" style="background: #C8A882;" aria-label="Beige champagne" title="Beige Champagne"></button>
+                <button class="swatch" style="background: #2C2416;" aria-label="Noyer foncé" title="Noyer Foncé"></button>
+                <button class="swatch" style="background: #1A1A2E;" aria-label="Nuit marine" title="Nuit Marine"></button>
+                <button class="swatch" style="background: #8B4513;" aria-label="Acajou" title="Acajou"></button>
+                <button class="swatch" style="background: #D4AF37;" aria-label="Or" title="Or"></button>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="product-actions">
+              <a href="#product/1" class="btn-gold btn-full btn-magnetic" id="product-order-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Voir le Produit / Commander
+              </a>
+              <a href="tel:+213XXXXXXXXX" class="btn-ghost btn-full" id="product-call-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12A19.79 19.79 0 0 1 1.65 3.33 2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.42 5.42l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+                Appeler pour un Devis
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT / USP SECTION — Brand Story Parallax
+    ═══════════════════════════════════════════ -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="about-parallax-bg" aria-hidden="true">
+        <div class="about-parallax-img" style="background-image: url('assets/images/hero_bedroom.jpg')" data-parallax></div>
+        <div class="about-parallax-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="section-container">
+        <div class="about-content" data-animate="fade-up">
+          <div class="section-eyebrow light">
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+            <span>Notre Savoir-Faire</span>
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title light" id="about-heading">
+            Plus de <span class="gold-text">10 Ans</span><br />
+            d'Excellence Mobilière
+          </h2>
+          <p class="about-text">
+            Chez <strong>Meuble Galaxy Plus</strong>, chaque pièce est une œuvre d'art fonctionnelle. 
+            Basés à <strong>Bejaia, Algérie</strong>, nous créons des espaces de vie exceptionnels qui allient 
+            l'esthétique moderne au confort sans compromis. Nos artisans qualifiés travaillent avec les matériaux 
+            les plus nobles pour vous offrir un mobilier qui transcende les tendances.
+          </p>
+
+          <!-- Stats -->
+          <div class="about-stats" aria-label="Chiffres clés">
+            <div class="stat-item" data-count="500" aria-label="Plus de 500 clients satisfaits">
+              <span class="stat-number" id="stat-clients">0+</span>
+              <span class="stat-label">Clients Satisfaits</span>
+            </div>
+            <div class="stat-separator" aria-hidden="true"></div>
+            <div class="stat-item" data-count="10" aria-label="Plus de 10 ans d'expérience">
+              <span class="stat-number" id="stat-years">0</span>
+              <span class="stat-label">Ans d'Expérience</span>
+            </div>
+            <div class="stat-separator" aria-hidden="true"></div>
+            <div class="stat-item" data-count="50" aria-label="Plus de 50 modèles disponibles">
+              <span class="stat-number" id="stat-models">0+</span>
+              <span class="stat-label">Modèles Exclusifs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TESTIMONIALS — Social Proof
+    ═══════════════════════════════════════════ -->
+    <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="section-container">
+        <header class="section-header" data-animate="fade-up">
+          <div class="section-eyebrow">
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+            <span>Témoignages</span>
+            <span class="eyebrow-line-sm" aria-hidden="true"></span>
+          </div>
+          <h2 class="section-title" id="testimonials-heading">
+            Ce que disent<br />
+            <span class="gold-text">Nos Clients</span>
+          </h2>
+        </header>
+        <div class="testimonials-grid">
+          <article class="testimonial-card stagger-1" data-animate="fade-up">
+            <div class="testimonial-stars" aria-label="5 étoiles" aria-hidden="true">★★★★★</div>
+            <blockquote class="testimonial-text">
+              "La chambre Gold Prestige est tout simplement magnifique. La qualité des matériaux et la finition sont impeccables. L'équipe de pose a été professionnelle et rapide."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">S</div>
+              <div class="author-info">
+                <span class="author-name">Salima B.</span>
+                <span class="author-location">Bejaia</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card stagger-2" data-animate="fade-up">
+            <div class="testimonial-stars" aria-label="5 étoiles" aria-hidden="true">★★★★★</div>
+            <blockquote class="testimonial-text">
+              "Armoire coulissante miroir installée en 2 heures. Le résultat est bluffant, ma chambre est méconnaissable. Je recommande vivement Meuble Galaxy Plus!"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">K</div>
+              <div class="author-info">
+                <span class="author-name">Karim L.</span>
+                <span class="author-location">Sétif</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card stagger-3" data-animate="fade-up">
+            <div class="testimonial-stars" aria-label="5 étoiles" aria-hidden="true">★★★★★</div>
+            <blockquote class="testimonial-text">
+              "Service exceptionnel du début à la fin. La livraison était dans les délais et la qualité surpasse les photos. Mon salon est devenu un vrai showroom!"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">N</div>
+              <div class="author-info">
+                <span class="author-name">Nadia M.</span>
+                <span class="author-location">Tizi Ouzou</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT & FOOTER — Location Hub + Social
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" id="contact" aria-labelledby="footer-heading" role="contentinfo">
+    <div class="footer-top" data-animate="fade-up">
+      <div class="section-container">
+        <div class="footer-grid">
+
+          <!-- Brand Column -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="assets/images/logo_icon.png" alt="Meuble Galaxy Plus" class="footer-logo-img" />
+              <div class="footer-logo-text">
+                <span class="logo-brand">GALAXY PLUS</span>
+                <span class="logo-sub">MEUBLE DE LUXE</span>
+              </div>
+            </div>
+            <p class="footer-tagline">
+              L'art du mobilier de luxe.<br />Créateurs d'espaces exceptionnels depuis plus de 10 ans.
+            </p>
+            <!-- Arabic tagline -->
+            <p class="footer-tagline-ar" dir="rtl" lang="ar">
+              فن الأثاث الفاخر — نصنع مساحات استثنائية
+            </p>
+            <!-- Social Links -->
+            <div class="social-links" aria-label="Réseaux sociaux">
+              <a href="#" class="social-link" aria-label="Facebook Meuble Galaxy Plus" id="footer-facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram Meuble Galaxy Plus" id="footer-instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links Column -->
+          <div class="footer-links-col">
+            <h3 class="footer-col-title" id="footer-heading">Liens Rapides</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="#hero" class="footer-link">Accueil</a></li>
+              <li><a href="#collections" class="footer-link">Nos Collections</a></li>
+              <li><a href="#products" class="footer-link">Produits Phares</a></li>
+              <li><a href="#about" class="footer-link">Notre Histoire</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Collections Column -->
+          <div class="footer-links-col">
+            <h3 class="footer-col-title">Collections</h3>
+            <ul class="footer-links" role="list">
+              <li><a href="#collections" class="footer-link">Chambres à Coucher</a></li>
+              <li><a href="#collections" class="footer-link">Armoires Coulissantes</a></li>
+              <li><a href="#collections" class="footer-link">Rangements Intelligents</a></li>
+              <li><a href="#products" class="footer-link">Collection Gold</a></li>
+              <li><a href="#products" class="footer-link">Capitouné Prestige</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="footer-contact-col">
+            <h3 class="footer-col-title">Contact & Localisation</h3>
+            <address class="footer-address">
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>Adresse</strong><br />
+                  Bejaia, Algérie<br />
+                  <span class="contact-sub" dir="rtl" lang="ar">بجاية، الجزائر</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">📞</span>
+                <div>
+                  <strong>Téléphone</strong><br />
+                  <a href="tel:+213XXXXXXXXX" class="contact-link">+213 XX XX XX XX</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">🕐</span>
+                <div>
+                  <strong>Horaires d'ouverture</strong><br />
+                  Sam – Jeu : 8h00 – 18h00<br />
+                  Vendredi : 8h00 – 12h00
+                </div>
+              </div>
+            </address>
+            <!-- Footer Boutique CTA -->
+            <a href="#shop" class="btn-gold btn-sm" id="footer-cta-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              Découvrir la Boutique
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="section-container">
+        <div class="footer-bottom-inner">
+          <p class="footer-copy">
+            © 2025 <strong>Meuble Galaxy Plus</strong>. Tous droits réservés. Made in Algeria 🇩🇿
+          </p>
+          <p class="footer-legal">
+            Livraison & Installation gratuites à Bejaia et wilaya limitrophes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/router.js" defer></script>
+  <script src="assets/js/views/shop.js" defer></script>
+  <script src="assets/js/views/product.js" defer></script>
+  <script src="assets/js/views/cart.js" defer></script>
+  <script src="assets/js/views/checkout.js" defer></script>
+  <script src="assets/js/views/confirm.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
