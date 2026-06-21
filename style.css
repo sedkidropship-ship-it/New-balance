@@ -2006,17 +2006,17 @@ h1, h2, h3, h4, h5, h6,
 
   /* Hero adjustments */
   .hero {
-    height: calc(100dvh - var(--nav-height) - var(--space-4));
-    min-height: 650px;
+    height: 70vh;
+    min-height: 500px;
     margin: var(--space-2) var(--space-2) var(--space-6) var(--space-2);
     border-radius: var(--radius-md);
   }
   .hero-content {
     padding-right: 0;
     padding-top: var(--space-10);
-    padding-bottom: 160px;
+    padding-bottom: 80px;
   }
-  .hero-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+  .hero-title { font-size: clamp(1.5rem, 6vw, 2rem); }
   .hero-subtitle { font-size: var(--text-sm); }
   .break-desktop { display: inline; }
 
@@ -2070,9 +2070,15 @@ h1, h2, h3, h4, h5, h6,
 
 
   /* Hero CTA — stack vertically */
-  .hero-cta { flex-direction: column; align-items: flex-start; width: 100%; }
+  .hero-cta { flex-direction: column; align-items: center; width: 100%; gap: var(--space-4); }
   .hero-cta .btn-gold,
-  .hero-cta .btn-ghost { width: 100%; justify-content: center; }
+  .hero-cta .btn-ghost { 
+    width: max-content; 
+    min-width: 250px; 
+    max-width: 320px; 
+    margin: 0 auto;
+    justify-content: center; 
+  }
 
   /* Color variants — smaller gap */
   .color-variants { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
@@ -2087,17 +2093,17 @@ h1, h2, h3, h4, h5, h6,
   }
 
   .hero {
-    height: calc(100dvh - var(--nav-height) - var(--space-2));
-    min-height: 520px;
+    height: 60vh;
+    min-height: 450px;
     margin: var(--space-1) var(--space-1) var(--space-4) var(--space-1);
     border-radius: var(--radius-sm);
   }
   .hero-content {
     padding-top: var(--space-8);
-    padding-bottom: 130px;
+    padding-bottom: 60px;
   }
 
-  .hero-title { font-size: clamp(1.4rem, 8.5vw, 1.8rem); }
+  .hero-title { font-size: clamp(1.3rem, 7vw, 1.6rem); }
 
   .hero-eyebrow { font-size: 0.65rem; gap: var(--space-2); }
   .eyebrow-line { width: 25px; }
