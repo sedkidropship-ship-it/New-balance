@@ -2132,6 +2132,10 @@ h1, h2, h3, h4, h5, h6,
     bottom: 160px;
     margin-bottom: var(--space-2);
   }
+
+  #hero-gallery-btn {
+    display: none !important;
+  }
 }
 
 /* ─── Extra Small: max 360px ─── */
